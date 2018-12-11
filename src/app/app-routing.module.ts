@@ -13,7 +13,7 @@ import { UserManageComponent } from './pages/user-manage/user-manage.component';
 
 const routes: Routes = [
   {
-    path: '',                         // 默认加载路由
+    path: '',                         // 默认加载路由 默认加载路由会找register,下面有register这个。。然后就是登录模块了。所以你以进来就是登录模块，登录模块下面有logincomponent这个文件
     redirectTo: 'register',
     pathMatch: "full"
   },
