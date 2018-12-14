@@ -24,6 +24,7 @@ import { TabViewModule } from "primeng/primeng"; //选项卡
 import { InputTextareaModule } from "primeng/primeng";
 import { DropdownModule,CheckboxModule, FileUploadModule,LightboxModule, GalleriaModule,MultiSelectModule} from "primeng/primeng";
 import { PublicComponent } from './pages/public/public.component';
+import { MessageComponent } from "./components/message/message.component";
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { PublicComponent } from './pages/public/public.component';
     TouristRouteManageComponent,
     AttractionsEvaluationManageComponent,
     UserManageComponent,
-    PublicComponent
+    PublicComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
