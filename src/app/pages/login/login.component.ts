@@ -7,7 +7,10 @@ import { Router } from '../../../../node_modules/@angular/router';
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit {
-  // 构造函数
+  aa='123456' ;
+  tel='';
+  password='';
+ // 构造函数
   constructor(private router: Router) { 
 
   }
@@ -21,12 +24,13 @@ export class LoginComponent implements OnInit {
   
   // 登录 按钮
   toHome(){
+    console.log(this.tel);
     // 登录信息验证
 
     // 登录接口调用
 
     // 登录成功跳转
-    this.router.navigate(['/public']);
+     this.router.navigate(['/public']);
   }
 
 }

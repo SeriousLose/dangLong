@@ -1,13 +1,36 @@
 <!-- logo -->
-<div>
-    云岚旅游
+<div class="title">
+    <h1>云岚旅游</h1>
 </div>
 <!-- 菜单 -->
 <div class="menu-long">
-    <p-panelMenu [model]="items" [style]="{'width':'200px'}"></p-panelMenu>
+    <p-panelMenu [model]="items" [style]="{'width':'150px'}"></p-panelMenu>
 </div>
 <!-- 内容 -->
-<div class="content-long">
-    <router-outlet></router-outlet>
+<div class="container">
+    <form action="" class="parent">
+        <input type="text" placeholder="请输入想去的地方">
+        <input type="button" value="搜索景点" >
+
+    </form>
+    <div class="divBox">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="center"></div>
+        </div>
+</div>
+<div  class="Scrolling picture" >
+滚屏图片
+</div>
+<div class="recommend">
+    <h2>热门景点推荐</h2>
+    <br>
+    <a href="url">景点文字链接</a>
+    <br>
+    <a href="url">景点文字链接</a>
+</div>
+<div class="Raiders">
+<h2>旅游攻略</h2>
+
 </div>
 
