@@ -22,9 +22,12 @@ import { RadioButtonModule, GrowlModule } from "primeng/primeng"; //单选按钮
 import { ChartModule } from "primeng/primeng";
 import { TabViewModule } from "primeng/primeng"; //选项卡
 import { InputTextareaModule } from "primeng/primeng";
+import { ToastModule } from 'primeng/toast';
 import { DropdownModule,CheckboxModule, FileUploadModule,LightboxModule, GalleriaModule,MultiSelectModule} from "primeng/primeng";
 import { PublicComponent } from './pages/public/public.component';
 import { MessageComponent } from "./components/message/message.component";
+
+import { MessageService } from "primeng/api";
 
 
 @NgModule({
@@ -41,7 +44,7 @@ import { MessageComponent } from "./components/message/message.component";
     AttractionsEvaluationManageComponent,
     UserManageComponent,
     PublicComponent,
-    MessageComponent
+    MessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,8 +76,9 @@ import { MessageComponent } from "./components/message/message.component";
     MultiSelectModule,
     MenuModule,
     ContextMenuModule,
+    ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
