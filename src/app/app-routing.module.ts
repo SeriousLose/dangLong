@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
+
 import { PublicComponent } from './pages/public/public.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AttractionsInfoComponent } from './pages/attractions-info/attractions-info.component';
@@ -10,6 +10,7 @@ import { HomeManageComponent } from './pages/home-manage/home-manage.component';
 import { AttractionsManageComponent } from './pages/attractions-manage/attractions-manage.component';
 import { TouristRouteManageComponent } from './pages/tourist-route-manage/tourist-route-manage.component';
 import { UserManageComponent } from './pages/user-manage/user-manage.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,8 @@ const routes: Routes = [
   {
     path: 'register',                 // 登录/注册模块路由
     component: LoginComponent,
+  },{
+
   },{
     path: 'public',                   // 菜单公共 模块
     component: PublicComponent,
