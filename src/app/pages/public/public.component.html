@@ -1,26 +1,36 @@
-<!-- logo -->
-<div class="title">
-    <h1>云岚旅游</h1>
+<div class="clearfloat layout">
+    <!-- logo -->
+    <div class="title">
+        <h1>云岚旅游</h1>
+    </div>
+    <!-- 菜单 -->
+    <div class="menu-long">
+        <p-panelMenu [model]="items" [style]="{'width':'150px'}"></p-panelMenu>
+    </div>
+    <!-- 内容 -->
+    <div class="fl_content">
+        <router-outlet></router-outlet>
+    </div>
+
 </div>
-<!-- 菜单 -->
-<div class="menu-long">
-    <p-panelMenu [model]="items" [style]="{'width':'150px'}"></p-panelMenu>
-</div>
-<!-- 内容 -->
+
+<!-- 内容
 <div class="container">
-   
-        <input type="text" placeholder="请输入想去的地方">
-        <input type="button" value="搜索景点" >
+
+    <input type="text" placeholder="请输入想去的地方">
+    <input type="button" value="搜索景点">
 
     <div class="divBox">
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="center"></div>
-        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="center"></div>
+    </div>
 </div>
-<div  class="Scrolling picture" >
-滚屏图片
+
+<div class="Scrolling picture">
+    滚屏图片
 </div>
+
 <div class="recommend">
     <h2>热门景点推荐</h2>
     <br>
@@ -28,8 +38,8 @@
     <br>
     <a href="url">景点文字链接</a>
 </div>
+
 <div class="Raiders">
-<h2>旅游攻略</h2>
-
+    <h2>旅游攻略</h2>
 </div>
-
+ -->
