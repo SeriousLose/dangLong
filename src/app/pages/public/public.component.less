@@ -18,10 +18,12 @@
     }
 }
 .layout{
-    width: 80%;
-    margin: auto;
+    padding: 0px 10%;
     border-top: 20%;
     padding-top: 60px;
+    min-height: 100vh;
+    font-size: 12px;
+    background-color: #F6F6F6;
 }
 :host /deep/  .menu-long{
     float: left;
@@ -31,6 +33,14 @@
             position: absolute;
             right: 5px;
         }
+    }
+    .ui-state-active > a {
+        border: 1px solid #c8c8c8 !important; 
+        background-color: #f4f4f4 !important;
+        color: #333333 !important;
+    }
+    .ui-panelmenu-icon{
+        color: #848484 !important;
     }
 } 
 .fl_content{
