@@ -16,7 +16,7 @@ import { UserManageComponent } from "./pages/user-manage/user-manage.component";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 //UI
-import { InputTextModule, ButtonModule,DialogModule,CalendarModule,PasswordModule,PanelModule, MenuModule, ContextMenuModule} from "primeng/primeng";
+import { InputTextModule, ButtonModule,DialogModule,CalendarModule,PasswordModule,PanelModule, MenuModule, ContextMenuModule, ScrollPanelModule} from "primeng/primeng";
 import { DataTableModule, SharedModule,PanelMenuModule,BreadcrumbModule,AutoCompleteModule,PaginatorModule,SliderModule} from "primeng/primeng";
 import { RadioButtonModule, GrowlModule } from "primeng/primeng"; //单选按钮
 import { ChartModule } from "primeng/primeng";
@@ -76,7 +76,8 @@ import { MessageService } from "primeng/api";
     MultiSelectModule,
     MenuModule,
     ContextMenuModule,
-    ToastModule
+    ToastModule,
+    ScrollPanelModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

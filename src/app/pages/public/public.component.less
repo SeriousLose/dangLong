@@ -17,16 +17,21 @@
         }
     }
 }
+.fl_title{
+    width: 100%;
+    height: 60px;
+}
 .layout{
     padding: 0px 10%;
-    border-top: 20%;
-    padding-top: 60px;
-    min-height: 100vh;
+    height: calc(100vh - 60px);
+    box-sizing: border-box;
     font-size: 12px;
     background-color: #F6F6F6;
 }
 :host /deep/  .menu-long{
     float: left;
+    height: calc(100vh - 60px);
+    background: #ffffff;
     .ui-panelmenu-header-link{
         position: relative;
         .ui-panelmenu-icon{
@@ -43,8 +48,18 @@
         color: #848484 !important;
     }
 } 
-.fl_content{
-    float: left;
+:host /deep/ .fl_content{
+    float: right;
+    background: #ffffff;
+    height: calc(100vh - 60px);
+    width: calc(100% - 180px);
+    min-width: 970px;
+    .ui-scrollpanel:hover .ui-scrollpanel-bar{
+        opacity: 0.4;
+    }
+    .ui-scrollpanel-bar{
+        background: black !important;
+    }
 }
 /*
 
