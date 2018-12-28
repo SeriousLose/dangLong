@@ -28,6 +28,8 @@ import { PublicComponent } from './pages/public/public.component';
 import { MessageComponent } from "./components/message/message.component";
 
 import { MessageService } from "primeng/api";
+import { ChangePasswordComponent } from "./pages/change-password/change-password.component";
+import { InfoModifyComponent } from "./pages/info-modify/info-modify.component";
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { MessageService } from "primeng/api";
     AttractionsEvaluationManageComponent,
     UserManageComponent,
     PublicComponent,
+    ChangePasswordComponent,
     MessageComponent,
+    InfoModifyComponent
   ],
   imports: [
     BrowserModule,

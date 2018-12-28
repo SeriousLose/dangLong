@@ -10,6 +10,8 @@ import { HomeManageComponent } from './pages/home-manage/home-manage.component';
 import { AttractionsManageComponent } from './pages/attractions-manage/attractions-manage.component';
 import { TouristRouteManageComponent } from './pages/tourist-route-manage/tourist-route-manage.component';
 import { UserManageComponent } from './pages/user-manage/user-manage.component';
+import { ChangePasswordComponent } from './pages/change-password/change-password.component';
+import { InfoModifyComponent } from './pages/info-modify/info-modify.component';
 
 
 const routes: Routes = [
@@ -66,6 +68,16 @@ const routes: Routes = [
         path: `userManage`,           // user-manage(用户管理) 模块
         component: UserManageComponent
       },
+      {
+        path: `changePassword`,           // change-password(修改密码) 模块
+        component: ChangePasswordComponent
+      },
+      {
+        path: `infoModify`,           // info-modify(信息修改) 模块
+        component: InfoModifyComponent
+      },
+
+      
     ]
   },
   {

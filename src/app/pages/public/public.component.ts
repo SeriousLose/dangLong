@@ -29,8 +29,8 @@ export class PublicComponent implements OnInit {
         label: '个人设置',
         icon: 'pi pi-pw pi-cog',
         items: [
-          {label: '信息修改', icon: 'pi pi-fw pi-star-o',routerLink:'/public/home'},
-          {label: '修改密码', icon: 'pi pi-fw pi-star-o',routerLink:'/public/home'},
+          {label: '信息修改', icon: 'pi pi-fw pi-star-o',routerLink:'/public/infoModify'},
+          {label: '修改密码', icon: 'pi pi-fw pi-star-o',routerLink:'/public/changePassword'},
         ]
       },
       {
