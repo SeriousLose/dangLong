@@ -53,7 +53,7 @@ export class PublicComponent implements OnInit {
       }
     ];
     // 请求用户数量
-    this.getUserNums();
+    // this.getUserNums();
   }
   getUserNums(){
     // this.totalSer.getUserumber().subscribe(res => {
