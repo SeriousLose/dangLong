@@ -9,8 +9,8 @@ export class TotalServiceService {
   constructor(private http: HttpClient) {}
 
   // 获取用户数量
-  getUserumber() {
-    return this.http.get("/usernum");
-  }
+  // getUserumber() {
+  //   return this.http.get("/usernum");
+  // }
 
 }
