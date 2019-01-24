@@ -56,11 +56,11 @@ export class PublicComponent implements OnInit {
     this.getUserNums();
   }
   getUserNums(){
-    this.totalSer.getUserumber().subscribe(res => {
-      console.log(res);
-    }, err => {
-      console.log(err)
-    });
+    // this.totalSer.getUserumber().subscribe(res => {
+    //   console.log(res);
+    // }, err => {
+    //   console.log(err)
+    // });
   }
 
 }
