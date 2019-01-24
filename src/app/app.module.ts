@@ -13,7 +13,7 @@ import { AttractionsManageComponent } from "./pages/attractions-manage/attractio
 import { TouristRouteManageComponent } from "./pages/tourist-route-manage/tourist-route-manage.component";
 import { AttractionsEvaluationManageComponent } from "./pages/attractions-evaluation-manage/attractions-evaluation-manage.component";
 import { UserManageComponent } from "./pages/user-manage/user-manage.component";
-
+import {CardModule} from 'primeng/card';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 //UI
 import { InputTextModule, ButtonModule,DialogModule,CalendarModule,PasswordModule,PanelModule, MenuModule, ContextMenuModule, ScrollPanelModule} from "primeng/primeng";
@@ -82,6 +82,7 @@ import { InfoModifyComponent } from "./pages/info-modify/info-modify.component";
     ContextMenuModule,
     ToastModule,
     ScrollPanelModule,
+    CardModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
