@@ -1,10 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class TotalServiceService {
-// 这个就是回来写接口的地方了。
-// 我在给你说下提交的问题。就是把代码放到你刚下载的放了。
-  constructor() { }
+
+  constructor(private http: HttpClient) {}
+
+  // 获取用户数量
+  getUserumber() {
+    return this.http.get("/usernum");
+  }
+
 }

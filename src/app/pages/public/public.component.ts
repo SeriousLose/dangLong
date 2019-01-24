@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TotalServiceService } from '../../services/total-service.service';
+
 
 @Component({
   selector: 'app-public',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicComponent implements OnInit {
   items:any = [];
-  constructor() { }
+  constructor(
+    private totalSer:TotalServiceService
+  ) { }
 
   ngOnInit() {
     this.items = [
@@ -48,6 +52,15 @@ export class PublicComponent implements OnInit {
         routerLink:'/public/userManage'
       }
     ];
+    // 请求用户数量
+    this.getUserNums();
+  }
+  getUserNums(){
+    this.totalSer.getUserumber().subscribe(res => {
+      console.log(res);
+    }, err => {
+      console.log(err)
+    });
   }
 
 }
