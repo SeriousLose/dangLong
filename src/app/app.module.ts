@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HttpModule, JsonpModule} from '@angular/http';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -30,6 +31,8 @@ import { MessageComponent } from "./components/message/message.component";
 import { MessageService } from "primeng/api";
 import { ChangePasswordComponent } from "./pages/change-password/change-password.component";
 import { InfoModifyComponent } from "./pages/info-modify/info-modify.component";
+import { TotalServiceService } from "./services/total-service.service";
+import { HttpClientModule } from "../../node_modules/@angular/common/http";
 
 
 @NgModule({
@@ -83,8 +86,11 @@ import { InfoModifyComponent } from "./pages/info-modify/info-modify.component";
     ToastModule,
     ScrollPanelModule,
     CardModule,
+    HttpModule,
+    JsonpModule,
+    HttpClientModule 
   ],
-  providers: [MessageService],
+  providers: [MessageService,TotalServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
