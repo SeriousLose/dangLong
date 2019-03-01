@@ -10,6 +10,8 @@ export class ChangePasswordComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  
   }
+  
 
 }

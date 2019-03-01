@@ -12,7 +12,7 @@ export class TotalServiceService {
 
   // 获取用户数量
   getUserumber() {
-    return this.http.get("/api/usernum");
+    return this.http.get("/api/user");
   }
 
 }

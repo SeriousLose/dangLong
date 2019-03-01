@@ -11,7 +11,9 @@ export class LoginComponent implements OnInit {
   tel='';
   password='';
  // 构造函数
-  constructor(private router: Router) { 
+  constructor(private router: Router
+    
+    ) { 
 
   }
 
@@ -22,6 +24,8 @@ export class LoginComponent implements OnInit {
 
   }
   
+
+
   // 登录 按钮
   toHome(){
     console.log(this.tel);

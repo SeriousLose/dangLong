@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TotalServiceService } from '../../services/total-service.service';
+// import { TotalServiceService } from '../../services/total-service.service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { TotalServiceService } from '../../services/total-service.service';
 export class PublicComponent implements OnInit {
   items:any = [];
   constructor(
-    private totalSer:TotalServiceService
+    // private totalSer:TotalServiceService
   ) { }
 
   ngOnInit() {
@@ -53,14 +53,14 @@ export class PublicComponent implements OnInit {
       }
     ];
     // 请求用户数量
-    this.getUserNums();
+    // this.getUserNums();
   }
-  getUserNums(){
-    this.totalSer.getUserumber().subscribe(res => {
-      console.log(res);
-    }, err => {
-      console.log(err)
-    });
-  }
+  // getUserNums(){
+  //   this.totalSer.getUserumber().subscribe(res => {
+  //     console.log(res);
+  //   }, err => {
+  //     console.log(err)
+  //   });
+  // }
 
 }
