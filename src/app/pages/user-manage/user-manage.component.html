@@ -1,71 +1,87 @@
 <div class="ui-inputgroup">
-    <input type="text" pInputText placeholder="请输入关键字">
-    <button pButton type="button" icon="fa fa-superpowers" class="ui-button-warn"></button>
-  </div>
-  <table width="90%" class="table">
-    <tr>
-      <th>编号</th>
-      <th>姓名</th>
-      <th>性别</th>
-      <th>邮箱</th>
-      <th>电话</th>
-      <th>操作</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>
-        <button class="green button">修改</button>
-        <button>删除</button>
-      </td>
-    </tr>
-    <tr class="alter">
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr >
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr class="alter">
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr class="alter" >
-      <td>
-        <input type="text"> 
-      </td>
-      <td><input type="text"></td>
-      <td><input type="text"></td>
-      <td><input type="text"></td>
-      <td><input type="text"></td>
-      <td>
+  <input type="text" pInputText placeholder="请输入关键字">
+  <button pButton type="button" icon="fa fa-superpowers" class="ui-button-warn"></button>
+</div>
+<p-dataTable [value]="dataList" selectionMode="multiple" emptyMessage="暂无数据">
+  <p-column field="" header="序号" [style]="{'width':'50px','height':'30px'}">
+      <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
+          <!-- <span>{{ri+1+(page.curPage-1)*page.pageSize}}</span> -->
+          <span>{{ri+1}}</span>
+      </ng-template>
+  </p-column>
+  <p-column field="tel" header="姓名"></p-column>
+  <p-column field="password" header="密码"></p-column>
+  <p-column  header="操作">
+    <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
+      <span (click)="delUser(data.id)">删除</span>
+      <span>修改</span>
+  </ng-template>
+  </p-column>
+</p-dataTable>
+<p-paginator [rows]="page.pageSize" [totalRecords]="page.totalNum" (onPageChange)="paginate($event)"></p-paginator>
+<!-- <table width="90%" class="table">
+  <tr>
+    <th>姓名</th>
+    <th>性别</th>
+    <th>电话</th>
+    <th>邮箱</th>
+    <th>介绍</th>
+    <th>操作</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>
+      <button class="green button">修改</button>
+      <button>删除</button>
+    </td>
+  </tr>
+  <tr class="alter">
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>1</td>
+  </tr>
+  <tr class="alter">
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>2</td>
+    <td>1</td>
+  </tr>
+  <tr class="alter">
+    <td>
+      <input type="text">
+    </td>
+    <td><input type="text"></td>
+    <td><input type="text"></td>
+    <td><input type="text"></td>
+    <td><input type="text"></td>
+    <td>
 
       <button>添加</button>
-      </td>
-    </tr>
-  </table>
-  
+    </td>
+  </tr>
+</table> -->
