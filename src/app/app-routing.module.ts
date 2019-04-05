@@ -12,6 +12,7 @@ import { TouristRouteManageComponent } from './pages/tourist-route-manage/touris
 import { UserManageComponent } from './pages/user-manage/user-manage.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { InfoModifyComponent } from './pages/info-modify/info-modify.component';
+import { AttractionsEvaluationManageComponent } from './pages/attractions-evaluation-manage/attractions-evaluation-manage.component';
 
 
 const routes: Routes = [
@@ -62,7 +63,7 @@ const routes: Routes = [
       },
       {
         path: `attrEvaluManage`,      // attractions-evaluation-manage(景点评价管理) 模块
-        component: TouristRouteManageComponent
+        component: AttractionsEvaluationManageComponent
       },
       {
         path: `userManage`,           // user-manage(用户管理) 模块

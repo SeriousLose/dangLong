@@ -1,24 +1,52 @@
 <div class="ui-inputgroup">
-  <input type="text" pInputText placeholder="请输入关键字">
-  <button pButton type="button" icon="fa fa-superpowers" class="ui-button-warn"></button>
+  <input type="text" pInputText placeholder="请输入关键字" [(ngModel)]="Keyword">
+  <button pButton type="button" icon="fa fa-superpowers" class="ui-button-warn" (click)="getInquire()"></button>
 </div>
+
+<!-- 数据列表 -->
 <p-dataTable [value]="dataList" selectionMode="multiple" emptyMessage="暂无数据">
   <p-column field="" header="序号" [style]="{'width':'50px','height':'30px'}">
-      <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
-          <!-- <span>{{ri+1+(page.curPage-1)*page.pageSize}}</span> -->
-          <span>{{ri+1}}</span>
-      </ng-template>
+    <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
+      <!-- <span>{{ri+1+(page.curPage-1)*page.pageSize}}</span> -->
+      <span>{{ri+1}}</span>
+    </ng-template>
   </p-column>
-  <p-column field="tel" header="姓名"></p-column>
+  <p-column field="tel" header="手机号"></p-column>
   <p-column field="password" header="密码"></p-column>
-  <p-column  header="操作">
+  <p-column header="操作">
     <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
       <span (click)="delUser(data.id)">删除</span>
-      <span>修改</span>
-  </ng-template>
+      <span (click)="editData(data)">修改</span>
+      <span>添加</span>
+    </ng-template>
   </p-column>
 </p-dataTable>
+
+<!-- 分页 -->
 <p-paginator [rows]="page.pageSize" [totalRecords]="page.totalNum" (onPageChange)="paginate($event)"></p-paginator>
+<!-- 编辑弹窗 -->
+<div>
+  <p-dialog [(visible)]="display" width="400">
+    <p-header>
+      修改用户信息
+    </p-header>
+    <div class="fl_contentM">
+      <div class="fl_low">
+          <label for="float-input">手机号</label>
+          <input id="float-input" type="text" size="30"  [(ngModel)]="editData1.tel"  disabled=true pInputText>
+      </div>
+      <div class="fl_low">
+          <label for="float-input">密码</label>
+          <input id="float-input" type="text" size="30" [(ngModel)]="editData1.password" pInputText>
+      </div>
+    </div>
+    <p-footer>
+      <p-button class="fl_cancel" (click)="htt()" label="取消"></p-button>
+      <p-button (click)="sure()" label="确认"></p-button>
+
+    </p-footer>
+  </p-dialog>
+</div>
 <!-- <table width="90%" class="table">
   <tr>
     <th>姓名</th>

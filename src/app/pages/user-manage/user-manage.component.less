@@ -1,60 +1,105 @@
-.ui-inputgroup{
+.ui-inputgroup {
     position: relative;
     left: 5%;
     top: 20%;
 }
-body,table{ 
-    font-size:12px; 
-    } 
-    table{ 
-    table-layout:fixed; 
-    empty-cells:show; 
-    border-collapse: collapse; 
-    margin:0 auto; 
-    margin-top: 5%; 
-    } 
-    td{ 
-    height:30px;
-    color:burlywood 
-    } 
-    h1,h2,h3{ 
-    font-size:12px; 
-    margin:0; 
-    padding:0; 
-    } 
-    .table{ 
-    border:1px solid #cad9ea; 
-    color:#666; 
-    } 
-    .table th { 
-    background-repeat:repeat-x; 
-    height:30px; 
-    } 
-    .table td,.table th{ 
-    border:1px solid #cad9ea; 
-    padding:0 1em 0; 
-    } 
-    .table tr.alter{ 
-    background-color:#f5fafe; 
+
+body,
+table {
+    font-size: 12px;
+}
+
+table {
+    table-layout: fixed;
+    empty-cells: show;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+td {
+    height: 30px;
+    color: burlywood
+}
+
+h1,
+h2,
+h3 {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.table {
+    border: 1px solid #cad9ea;
+    color: #666;
+}
+
+.table th {
+    background-repeat: repeat-x;
+    height: 30px;
+}
+
+.table td,
+.table th {
+    border: 1px solid #cad9ea;
+    padding: 0 1em 0;
+}
+
+.table tr.alter {
+    background-color: #f5fafe;
+}
+
+button {
+    color: #444444;
+    background: #F3F3F3;
+    border: 1px #DADADA solid;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+}
+
+button:hover {
+    border: 1px #C6C6C6 solid;
+    box-shadow: 1px 1px 1px #EAEAEA;
+    color: #333333;
+    background: #F7F7F7;
+}
+
+button:active {
+    box-shadow: inset 1px 1px 1px #DFDFDF;
+}
+
+.fl_contentM {
+    padding: 20px 10px;
+
+    .fl_low {
+        padding-bottom: 10px;
+        label {
+            width: 70px;
+            padding-right: 15px;
+            display: inline-block;
+            text-align: right;
+        }
     }
-    button {
-        color: #444444;
-        background: #F3F3F3;
-        border: 1px #DADADA solid;
-        padding: 5px 10px;
-        border-radius: 2px;
-        font-weight: bold;
-        font-size: 9pt;
-        outline: none;
-    }
-    
-    button:hover {
-        border: 1px #C6C6C6 solid;
-        box-shadow: 1px 1px 1px #EAEAEA;
+}
+
+// 取消按钮
+:host /deep/ .fl_cancel {
+    .ui-widget {
         color: #333333;
-        background: #F7F7F7;
+        background-color: #f4f4f4;
+        border: 1px solid #f4f4f4;
     }
-    
-    button:active {
-        box-shadow: inset 1px 1px 1px #DFDFDF;   
+
+    .ui-button:enabled:hover,
+    .ui-button:enabled:focus {
+        color: #333333;
+        background-color: #f4f4f4;
+        border: 1px solid #f4f4f4;
     }
+
+
+}

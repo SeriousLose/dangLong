@@ -1,4 +1,28 @@
-<table width="90%" class="table">
+<div class="ui-inputgroup">
+    <input type="text" pInputText placeholder="请输入关键字" [(ngModel)]="Keyword">
+    <button pButton type="button" icon="fa fa-superpowers" class="ui-button-warn" (click)="getInquire()"></button>
+</div>
+<p-dataTable [value]="dataList" selectionMode="multiple" emptyMessage="暂无数据">
+    <p-column field="" header="序号" [style]="{'width':'50px','height':'30px'}">
+        <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
+            <!-- <span>{{ri+1+(page.curPage-1)*page.pageSize}}</span> -->
+            <span>{{ri+1}}</span>
+        </ng-template>
+    </p-column>
+    <p-column field="viewname" header="景点名称"></p-column>
+    <p-column field="price" header="票价"></p-column>
+    <p-column field="introduce" header="景点介绍"></p-column>
+    <p-column header="操作">
+        <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
+            <span (click)="delView(data.id)">删除</span>
+            <span>修改</span>
+        </ng-template>
+    </p-column>
+</p-dataTable> 
+<p-paginator [rows]="page.pageSize" [totalRecords]="page.totalNum" (onPageChange)="paginate($event)"></p-paginator>
+
+
+<!-- <table width="90%" class="table">
   <tr>
     <th>景点名称</th>
     <th>景点票价</th>
@@ -104,5 +128,4 @@
         </td> 
         </tr> 
        
-        </table> 
-
+        </table>  -->

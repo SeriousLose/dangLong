@@ -24,15 +24,230 @@
   
 </div> -->
 
+<div class="ui-inputgroup" style="margin-left: 40%;margin-top: 20px">
+  <input type="text" pInputText placeholder="输入景点">
+  <button pButton type="button" icon="fa fa-superpowers" class="ui-button-warn"></button>
+</div>
+<div class="frame1" style="display: inline-block;position: relative;top:10px">
+  <p-card header="Advanced Card" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header>
+      <img src="Card" src="assets/images/attractions-info/Travel pictures1.jpg">
+    </p-header>
+    <div>
+      <div class="Spot_name">
+        <p class="right_p1">景点名称:</p>
+      </div>
+      <div class="Sight_ticket_price">
+        <p class="right_p2">景点票价:</p>
+      </div>
+      <div class="Attractions_location">
+        <p class="right_p3">景点地点:</p>
+      </div>
+      <div class="Attractions">
+        <p class="right_p4">景点介绍:</p>
+      </div>
+    </div>
+    <p-footer>
+      <button pButton type="button" label="点击查看周边景点" icon="pi pi-check" style="margin-right: .25em"></button>
+      <button pButton type="button" label="点击查看用户评论" icon="pi pi-times" class="ui-button-secondary"></button>
+    </p-footer>
+  </p-card>
+</div>
 
-<p-card header="Advanced Card" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
-  <p-header>
-      <img src="Card" src="assets/showcase/images/usercard.png">
-  </p-header>
-  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-      quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</div>
-  <p-footer>
-      <button pButton type="button" label="Save" icon="pi pi-check" style="margin-right: .25em"></button>
-      <button pButton type="button" label="Cancel" icon="pi pi-times" class="ui-button-secondary"></button>
-  </p-footer>
-</p-card>
+<div class="frame2" style="display: inline-block;position: relative;left: 10%;top:10px">
+  <p-card header="Advanced Card" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header>
+      <img src="Card" src="assets/images/attractions-info/Travel pictures1.jpg">
+    </p-header>
+    <div>
+      <div class="Spot_name">
+        <p class="right_p1">景点名称:</p>
+      </div>
+      <div class="Sight_ticket_price">
+        <p class="right_p2">景点票价:</p>
+      </div>
+      <div class="Attractions_location">
+        <p class="right_p3">景点地点:</p>
+      </div>
+      <div class="Attractions">
+        <p class="right_p4">景点介绍:</p>
+      </div>
+    </div>
+    <p-footer>
+      <span (click)=look()>点击查看用户评论</span>
+      <span (click)=around()>点击查看周边游线信息</span>
+    </p-footer>
+
+  </p-card>
+</div>
+
+
+<div class="frame3" style="display: inline-block;position: relative;left: 20%;top:10px">
+  <p-card header="Advanced Card" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header>
+      <img src="Card" src="assets/images/attractions-info/Travel pictures1.jpg">
+    </p-header>
+    <div>
+      <div class="Spot_name">
+        <p class="right_p1">景点名称:</p>
+      </div>
+      <div class="Sight_ticket_price">
+        <p class="right_p2">景点票价:</p>
+      </div>
+      <div class="Attractions_location">
+        <p class="right_p3">景点地点:</p>
+      </div>
+      <div class="Attractions">
+        <p class="right_p4">景点介绍:</p>
+      </div>
+
+    </div>
+    <p-footer>
+      <button pButton type="button" label="save" icon="pi pi-check" style="margin-right: .25em"></button>
+      <button pButton type="button" label="点击查看评论" icon="pi pi-times" class="ui-button-secondary"></button>
+    </p-footer>
+  </p-card>
+</div>
+
+<div class="frame4" style="display: inline-block;position: relative;top: 20px">
+  <p-card header="Advanced Card" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header>
+      <img src="Card" src="assets/images/attractions-info/Travel pictures1.jpg">
+    </p-header>
+    <div>
+      <div class="Spot_name">
+        <p class="right_p1">景点名称:</p>
+      </div>
+      <div class="Sight_ticket_price">
+        <p class="right_p2">景点票价:</p>
+      </div>
+      <div class="Attractions_location">
+        <p class="right_p3">景点地点:</p>
+      </div>
+      <div class="Attractions">
+        <p class="right_p4">景点介绍:</p>
+      </div>
+
+    </div>
+    <p-footer>
+      <button pButton type="button" label="save" icon="pi pi-check" style="margin-right: .25em"></button>
+      <button pButton type="button" label="点击查看评论" icon="pi pi-times" class="ui-button-secondary"></button>
+    </p-footer>
+  </p-card>
+</div>
+
+<div class="frame5" style="display: inline-block;position: relative;left: 10%;top: 20px">
+  <p-card header="Advanced Card" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header>
+      <img src="Card" src="assets/images/attractions-info/Travel pictures1.jpg">
+    </p-header>
+    <div>
+      <div class="Spot_name">
+        <p class="right_p1">景点名称:</p>
+      </div>
+      <div class="Sight_ticket_price">
+        <p class="right_p2">景点票价:</p>
+      </div>
+      <div class="Attractions_location">
+        <p class="right_p3">景点地点:</p>
+      </div>
+      <div class="Attractions">
+        <p class="right_p4">景点介绍:</p>
+      </div>
+
+    </div>
+    <p-footer>
+      <button pButton type="button" label="save" icon="pi pi-check" style="margin-right: .25em"></button>
+      <button pButton type="button" label="点击查看评论" icon="pi pi-times" class="ui-button-secondary"></button>
+    </p-footer>
+  </p-card>
+</div>
+
+<div class="frame6" style="display: inline-block;position: relative;left: 20%; top: 20px">
+  <p-card header="Advanced Card" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header>
+      <img src="Card" src="assets/images/attractions-info/Travel pictures1.jpg">
+    </p-header>
+    <div>
+      <div class="Spot_name">
+        <p class="right_p1">景点名称:</p>
+      </div>
+      <div class="Sight_ticket_price">
+        <p class="right_p2">景点票价:</p>
+      </div>
+      <div class="Attractions_location">
+        <p class="right_p3">景点地点:</p>
+      </div>
+      <div class="Attractions">
+        <p class="right_p4">景点介绍:</p>
+      </div>
+
+    </div>
+    <p-footer>
+      <button pButton type="button" label="save" icon="pi pi-check" style="margin-right: .25em"></button>
+      <button pButton type="button" label="点击查看评论" icon="pi pi-times" class="ui-button-secondary"></button>
+    </p-footer>
+  </p-card>
+</div>
+
+<!-- 编辑弹窗 -->
+<div>
+  <p-dialog [(visible)]="display" width="400">
+    <p-header>
+      评论信息
+    </p-header>
+
+    <!-- 下面实现留言板功能 -->
+    <div class="mainframe">
+      <div class="title">留言板</div>
+      <div class="message">主人寄语</div>
+      <div class="info">
+        这是主人留下的寄语~
+      </div>
+      <div class="content" contenteditable="true"></div>
+      <input type="button" name="submit" value="发表" class="subbtn">
+      <div class="numofmessage">留言(0)</div>
+      <!-- 下面是留言区 -->
+      <div class="msgFrame">
+        <!--  <div class="content_1">
+             <img class="name" src="http://qlogo3.store.qq.com/qzone/1262283870/1262283870/100?1481718124" alt="photo">
+             <div class="mainInfo">
+               <div class="userId"><a href="#">zipple</a></div>
+               <div class="conInfo">
+                 这是一条留言。
+                  </div>
+               <div class="time">2016-12-19  23:46:11</div>
+          </div> -->
+
+      </div>
+    </div>
+
+    <p-footer>
+      <p-button class="fl_cancel" label="取消"></p-button>
+      <p-button label="确认"></p-button>
+
+    </p-footer>
+  </p-dialog>
+</div>
+
+<!-- 编辑弹窗 -->
+<div>
+  <p-dialog [(visible)]="display" width="400">
+    <p-header>
+      周边景点
+    </p-header>
+    <div class="fl_contentM">
+      <div class="fl_low">
+        <span>周边景点</span>
+      </div>
+      <div class="fl_low">
+        <span>景点介绍</span>
+      </div>
+    </div>
+    <p-footer>
+      <p-button class="fl_cancel" label="取消"></p-button>
+      <p-button label="确认"></p-button>
+
+    </p-footer>
+  </p-dialog>
+</div>

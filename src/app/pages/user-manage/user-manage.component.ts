@@ -9,6 +9,12 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./user-manage.component.less"]
 })
 export class UserManageComponent implements OnInit {
+  Keyword: any = ``; // 关键字
+  editData1: any = {
+    id:``,
+    tel: ``,
+    password: ``
+  };
   dataList: any = [
     {
       id: "1",
@@ -37,6 +43,7 @@ export class UserManageComponent implements OnInit {
     }
   ];
   page: page = new page(); // 分页
+  display: boolean = false; // 修改弹窗显、隐
 
   constructor(
     private totalSer: TotalServiceService,
@@ -46,23 +53,61 @@ export class UserManageComponent implements OnInit {
   ngOnInit() {
     this.getUserNums();
     this.getUserlist(1);
-    this.getQuerytel('123456');
+
+    // this.getQuerytel('123456');
   }
-//根据电话查询
-  getQuerytel(tel){
+  editData(data) {
+    this.editData1 = data;
+    this.display = true;
+  }
+
+  sure() {
+    console.log(this.editData1);
+    this.display = false;
+    this.getChangeuserdata(this.editData1.tel,this.editData1.password)
+  }
+  htt(){
+    this.display = false;
+  }
+  // 关键字查询
+  getInquire() {
+    if (!this.Keyword) {
+      alert("请输入查询关键字");
+    }
+    this.getQuerytel(this.Keyword);
+  }
+
+  //根据电话查询
+  getQuerytel(tel) {
     let params;
-    params = `tel=${tel}`
+    params = `tel=${tel}`;
     this.totalSer.getQuerytel(params).subscribe(
       res => {
-        // this.dataList = res;
-        console.log(res,1111111111111111);
+        this.dataList = res;
+        console.log(res, 1111111111111111);
       },
       err => {
         console.log(err);
       }
     );
   }
-  
+
+  // 修改用户数据
+  getChangeuserdata(tel, password) {
+    let params;
+    params = `tel=${tel}&password=${password}`;
+    this.totalSer.getChangeuserdata(params).subscribe(
+      res => {
+        // this.dataList = res;
+        this.getUserlist(1);
+        console.log(res, 1111111111111111);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
   // 获取数据
   getUserlist(curPage) {
     this.totalSer.getUser(`page=${curPage}`).subscribe(
@@ -76,13 +121,11 @@ export class UserManageComponent implements OnInit {
     );
   }
 
-
   //删除数据
-  delUser(id){
+  delUser(id) {
     this.totalSer.getDeluser(`id=${id}`).subscribe(
       res => {
-        
-        if(res["msg"]){
+        if (res["msg"]) {
           this.getUserlist(1);
           this.getUserNums();
         }

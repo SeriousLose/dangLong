@@ -2,7 +2,7 @@
   <input type="text" pInputText placeholder="输入景点">
   <button pButton type="button" icon="fa fa-superpowers" class="ui-button-warn"></button>
 </div>
-<table width="90%" class="table">
+<!-- <table width="90%" class="table">
   <tr>
     <th>景点名称</th>
     <th>周边景点1</th>
@@ -52,4 +52,27 @@
     <button>添加</button>
     </td>
   </tr>
-</table>
+</table> -->
+
+
+<!-- 数据列表 -->
+<p-dataTable [value]="dataList" selectionMode="multiple" emptyMessage="暂无数据">
+  <p-column field="" header="序号" [style]="{'width':'50px','height':'30px'}">
+    <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
+      <!-- <span>{{ri+1+(page.curPage-1)*page.pageSize}}</span> -->
+      <span>{{ri+1}}</span>
+    </ng-template>
+  </p-column>
+  <p-column field="viewname" header="景点名称"></p-column>
+  <p-column field="nearby" header="周边信息"></p-column>
+  
+  <p-column header="操作">
+    <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
+      <span (click)="delRoute(data.id)">删除</span>
+      <!-- <span (click)="aa()">修改</span> -->
+    </ng-template>
+  </p-column>
+</p-dataTable>
+
+<!-- 分页 -->
+<p-paginator [rows]="page.pageSize" [totalRecords]="page.totalNum" (onPageChange)="paginate($event)"></p-paginator>
