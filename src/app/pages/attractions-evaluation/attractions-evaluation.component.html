@@ -5,22 +5,23 @@
     <button pButton type="button" icon="fa fa-superpowers" class="ui-button-warn"></button>
   </div>
   <div class="edit">
-    <textarea name="评论区" value="输入" rows="5%" cols="60%"></textarea>
-    <input class="button1" type="button" value="评论" /> 
-		<input class="button2" type="button" value="清空" />
+    <textarea name="评论区" value="输入" rows="5%" cols="60%" [(ngModel)]="edit"></textarea>
+    <input class="button1" type="button" value="评论" (click)="addedit()"  /> 
+		<!-- <input class="button2" type="button" value="清空" /> -->
   </div>
   <div class="form_1">
-    <p class="form_p1">景点名称</p>
+    <p class="form_p1">云台山</p>
     <br>
     <br>
     <hr style="border: double #7cb98486" width="100%" color=#987cb9 SIZE=3>
     <ul class="list">
-      <li class="comment-item">
-        <span class="nickname">用户id </span>
+      <li class="comment-item" *ngFor="let item of list">
+              {{item}}
+        <!-- <span class="nickname">昵称 </span>
         <span class="submit-date">2018年12月12日 14:56</span>
         <div class="text">
           风景优美.非常美丽
-        </div>
+        </div> -->
       </li>
       ...
     </ul>
