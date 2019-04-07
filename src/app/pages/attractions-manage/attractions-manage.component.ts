@@ -8,38 +8,51 @@ import { HttpClient } from "@angular/common/http";
 })
 export class AttractionsManageComponent implements OnInit {
   Keyword:any = ``; // 关键字
+  change1: any = {
+    id:``,
+    viewname: ``,
+    price: ``,
+    place: ``,
+    introduce: ``
+  };
   dataList: any = [
     {
       id: "1",
       viewname: "张家界",
       price: "123",
+      place: "北京市 ",
       introduce: "好"
     },
     {
       id: "1",
       viewname: "云台山",
       price: "123",
+      place: "北京市 ",
       introduce: "好"
     },
     {
       id: "1",
       viewname: "连云港",
       price: "123",
+      place: "北京市 ",
       introduce: "好"
     },
     {
       id: "1",
       viewname: "厦门",
       price: "123",
+      place: "北京市 ",
       introduce: "好"
     },
     {
       id: "1",
       viewname: "雪山",
       price: "123",
+      place: "北京市 ",
       introduce: "好"
     }
   ];
+  display: boolean = false; // 修改弹窗显、隐
   page: page = new page(); // 分页
   constructor(
     private totalSer: TotalServiceService,
@@ -52,6 +65,21 @@ export class AttractionsManageComponent implements OnInit {
     // this.getQuerytel('123456');
   }
 
+
+  change(data) {
+    this.change1 = data;
+    this.display = true;
+  }
+
+
+  sure() {
+    console.log(this.change1);
+    this.display = false;
+    this.getChangeviewdata(this.change1.price,this.change1.introduce)
+  }
+  htt(){
+    this.display = false;
+  }
   // 获取景点数据;
   getViewlist(curPage) {
     this.totalSer.getViewdata(`page=${curPage}`).subscribe(
@@ -107,6 +135,22 @@ export class AttractionsManageComponent implements OnInit {
       res => {
         this.dataList = res;
         this.page.totalNum =res["length"]
+        console.log(res, 1111111111111111);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  // 修改用户数据
+  getChangeviewdata(id, password) {
+    let params;
+    params = `id=${id}&password=${password}`;
+    this.totalSer.getChangeviewsdata(params).subscribe(
+      res => {
+        // this.dataList = res;
+        this.getViewlist(1);
         console.log(res, 1111111111111111);
       },
       err => {

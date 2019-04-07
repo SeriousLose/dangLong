@@ -15,9 +15,12 @@
   <p-column field="password" header="密码"></p-column>
   <p-column header="操作">
     <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
-      <span (click)="delUser(data.id)">删除</span>
-      <span (click)="editData(data)">修改</span>
-      <span>添加</span>
+      <!-- <span class="delbutton" (click)="delUser(data.id)">删除</span>
+      <span class="modbutton" (click)="editData(data)">修改</span>
+      <span >添加</span> -->
+      <button pButton type="button" label="删除"  style="margin-right: .25em" (click)="delUser(data.id)" ></button>
+      <button pButton type="button" label="修改"  class="ui-button-secondary" (click)="editData(data)" ></button>
+      <button pButton type="button" label="添加"  style="margin-right: .25em" (click)="addData(data)"></button>
     </ng-template>
   </p-column>
 </p-dataTable>
@@ -33,7 +36,32 @@
     <div class="fl_contentM">
       <div class="fl_low">
           <label for="float-input">手机号</label>
-          <input id="float-input" type="text" size="30"  [(ngModel)]="editData1.tel"  disabled=true pInputText>
+          <input id="float-input" type="text" size="30"  [(ngModel)]="addData1.tel"  disabled=true pInputText>
+      </div>
+      
+      <div class="fl_low">
+          <label for="float-input">密码</label>
+          <input id="float-input" type="text" size="30" [(ngModel)]="addData1.password" pInputText>
+      </div>
+    </div>
+    <p-footer>
+      <p-button class="fl_cancel" (click)="htt()" label="取消"></p-button>
+      <p-button (click)="sure()" label="确认"></p-button>
+
+    </p-footer>
+  </p-dialog>
+</div>
+
+<!-- 编辑弹窗 -->
+<div>
+  <p-dialog [(visible)]="display" width="400">
+    <p-header>
+      添加用户信息
+    </p-header>
+    <div class="fl_contentM">
+      <div class="fl_low">
+          <label for="float-input">手机号</label>
+          <input id="float-input" type="text" size="30"  [(ngModel)]="editData1.tel"   pInputText>
       </div>
       <div class="fl_low">
           <label for="float-input">密码</label>
@@ -42,7 +70,7 @@
     </div>
     <p-footer>
       <p-button class="fl_cancel" (click)="htt()" label="取消"></p-button>
-      <p-button (click)="sure()" label="确认"></p-button>
+      <p-button (click)="yes()" label="确认"></p-button>
 
     </p-footer>
   </p-dialog>

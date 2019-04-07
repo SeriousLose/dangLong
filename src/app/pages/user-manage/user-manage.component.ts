@@ -15,6 +15,11 @@ export class UserManageComponent implements OnInit {
     tel: ``,
     password: ``
   };
+  addData1: any={
+    id:``,
+    tel:``,
+    password:``
+  };
   dataList: any = [
     {
       id: "1",
@@ -69,6 +74,18 @@ export class UserManageComponent implements OnInit {
   htt(){
     this.display = false;
   }
+
+  addData(data) {
+    this.addData1 = data;
+    this.display = true;
+  }
+
+  yes(data){
+    console.log(this.addData1);
+    this.display = false;
+    this.getAddduserdata(this.addData1.tel,this.addData1.password)
+  }
+
   // 关键字查询
   getInquire() {
     if (!this.Keyword) {
@@ -93,7 +110,23 @@ export class UserManageComponent implements OnInit {
   }
 
   // 修改用户数据
-  getChangeuserdata(tel, password) {
+  getChangeuserdata(id, password) {
+    let params;
+    params = `id=${id}&password=${password}`;
+    this.totalSer.getChangeuserdata(params).subscribe(
+      res => {
+        // this.dataList = res;
+        this.getUserlist(1);
+        console.log(res, 1111111111111111);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  // 添加用户数据
+  getAddduserdata(tel, password) {
     let params;
     params = `tel=${tel}&password=${password}`;
     this.totalSer.getChangeuserdata(params).subscribe(

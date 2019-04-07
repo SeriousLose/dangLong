@@ -34,6 +34,11 @@ export class TotalServiceService {
     return this.http.get(`/api/changeuserdata?${params}`);
   }
 
+  // 增加用户数据
+  getAdduserdata(params) {
+    return this.http.get(`/api/adduserdata?${params}`);
+  }
+
   //获取景点数量
   getViewNum() {
     return this.http.get(`/api/view`);
@@ -50,6 +55,11 @@ export class TotalServiceService {
   //根据景点名称查询
   getQueryviewname(params) {
     return this.http.get(`/api/queryviewname?${params}`);
+  }
+
+  // 修改景点信息数据
+  getChangeviewsdata(params) {
+    return this.http.get(`/api/changeviewdata?${params}`);
   }
 
   //获取景点评价数量

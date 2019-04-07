@@ -69,6 +69,9 @@
   <p-column header="操作">
     <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
       <span (click)="delRoute(data.id)">删除</span>
+      <!-- <button pButton type="button" label="删除"  style="margin-right: .25em" (click)="delUser(data.id)" ></button>
+      <button pButton type="button" label="修改"  class="ui-button-secondary" (click)="editData(data)" ></button>
+      <button pButton type="button" label="添加"  style="margin-right: .25em" ></button> -->
       <!-- <span (click)="aa()">修改</span> -->
     </ng-template>
   </p-column>

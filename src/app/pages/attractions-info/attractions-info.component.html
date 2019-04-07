@@ -28,28 +28,28 @@
   <input type="text" pInputText placeholder="输入景点">
   <button pButton type="button" icon="fa fa-superpowers" class="ui-button-warn"></button>
 </div>
-<div class="frame1" style="display: inline-block;position: relative;top:10px">
+<div class="frame1"  style="display: inline-block;position: relative;top:10px">
   <p-card header="Advanced Card" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
     <p-header>
       <img src="Card" src="assets/images/attractions-info/Travel pictures1.jpg">
     </p-header>
     <div>
       <div class="Spot_name">
-        <p class="right_p1">景点名称:</p>
+        <p class="right_p1">景点名称:云台山</p>
       </div>
       <div class="Sight_ticket_price">
-        <p class="right_p2">景点票价:</p>
+        <p class="right_p2">景点票价:158元</p>
       </div>
       <div class="Attractions_location">
-        <p class="right_p3">景点地点:</p>
+        <p class="right_p3">景点地点:湖北武汉市</p>
       </div>
       <div class="Attractions">
-        <p class="right_p4">景点介绍:</p>
+        <p class="right_p4">景点介绍:风景秀丽，景色迷人</p>
       </div>
     </div>
     <p-footer>
-      <button pButton type="button" label="点击查看周边景点" icon="pi pi-check" style="margin-right: .25em"></button>
-      <button pButton type="button" label="点击查看用户评论" icon="pi pi-times" class="ui-button-secondary"></button>
+      <button pButton type="button" label="点击查看用户评论"  style="margin-right: .25em" (click)=look()></button>
+      <button pButton type="button" label="点击查看用户评论"  class="ui-button-secondary" (click)=around()></button>
     </p-footer>
   </p-card>
 </div>
@@ -61,21 +61,22 @@
     </p-header>
     <div>
       <div class="Spot_name">
-        <p class="right_p1">景点名称:</p>
+        <p class="right_p1">景点名称:云台山</p>
       </div>
       <div class="Sight_ticket_price">
-        <p class="right_p2">景点票价:</p>
+        <p class="right_p2">景点票价:111元</p>
       </div>
       <div class="Attractions_location">
-        <p class="right_p3">景点地点:</p>
+        <p class="right_p3">景点地点:河南省焦作市</p>
       </div>
       <div class="Attractions">
-        <p class="right_p4">景点介绍:</p>
+        <p class="right_p4">景点介绍:风景独特，民风淳朴。</p>
       </div>
     </div>
     <p-footer>
-      <span (click)=look()>点击查看用户评论</span>
-      <span (click)=around()>点击查看周边游线信息</span>
+      <!-- <span (click)=look()>点击查看用户评论</span> -->
+      <button pButton type="button" label="点击查看用户评论"  style="margin-right: .25em" (click)=look()></button>
+      <button pButton type="button" label="点击查看用户评论"  class="ui-button-secondary" (click)=around()></button>
     </p-footer>
 
   </p-card>
@@ -89,22 +90,22 @@
     </p-header>
     <div>
       <div class="Spot_name">
-        <p class="right_p1">景点名称:</p>
+        <p class="right_p1">景点名称:龙门石窟</p>
       </div>
       <div class="Sight_ticket_price">
-        <p class="right_p2">景点票价:</p>
+        <p class="right_p2">景点票价:90元</p>
       </div>
       <div class="Attractions_location">
-        <p class="right_p3">景点地点:</p>
+        <p class="right_p3">景点地点:河南省洛阳市</p>
       </div>
       <div class="Attractions">
-        <p class="right_p4">景点介绍:</p>
+        <p class="right_p4">景点介绍:风景壮丽、迷人。</p>
       </div>
 
     </div>
     <p-footer>
-      <button pButton type="button" label="save" icon="pi pi-check" style="margin-right: .25em"></button>
-      <button pButton type="button" label="点击查看评论" icon="pi pi-times" class="ui-button-secondary"></button>
+      <button pButton type="button" label="点击查看用户评论"  style="margin-right: .25em" (click)=look()></button>
+      <button pButton type="button" label="点击查看用户评论"  class="ui-button-secondary" (click)=around()></button>
     </p-footer>
   </p-card>
 </div>
@@ -116,22 +117,22 @@
     </p-header>
     <div>
       <div class="Spot_name">
-        <p class="right_p1">景点名称:</p>
+        <p class="right_p1">景点名称:黄山风景区</p>
       </div>
       <div class="Sight_ticket_price">
-        <p class="right_p2">景点票价:</p>
+        <p class="right_p2">景点票价:150</p>
       </div>
       <div class="Attractions_location">
-        <p class="right_p3">景点地点:</p>
+        <p class="right_p3">景点地点:安徽省黄山市</p>
       </div>
       <div class="Attractions">
-        <p class="right_p4">景点介绍:</p>
+        <p class="right_p4">景点介绍:风景壮美绮丽。</p>
       </div>
 
     </div>
     <p-footer>
-      <button pButton type="button" label="save" icon="pi pi-check" style="margin-right: .25em"></button>
-      <button pButton type="button" label="点击查看评论" icon="pi pi-times" class="ui-button-secondary"></button>
+      <button pButton type="button" label="点击查看用户评论"  style="margin-right: .25em" (click)=look()></button>
+      <button pButton type="button" label="点击查看用户评论"  class="ui-button-secondary" (click)=around()></button>
     </p-footer>
   </p-card>
 </div>
@@ -143,22 +144,22 @@
     </p-header>
     <div>
       <div class="Spot_name">
-        <p class="right_p1">景点名称:</p>
+        <p class="right_p1">景点名称:八达岭长城</p>
       </div>
       <div class="Sight_ticket_price">
-        <p class="right_p2">景点票价:</p>
+        <p class="right_p2">景点票价:150</p>
       </div>
       <div class="Attractions_location">
-        <p class="right_p3">景点地点:</p>
+        <p class="right_p3">景点地点:北京市</p>
       </div>
       <div class="Attractions">
-        <p class="right_p4">景点介绍:</p>
+        <p class="right_p4">景点介绍:壮观动人心魄。</p>
       </div>
 
     </div>
     <p-footer>
-      <button pButton type="button" label="save" icon="pi pi-check" style="margin-right: .25em"></button>
-      <button pButton type="button" label="点击查看评论" icon="pi pi-times" class="ui-button-secondary"></button>
+      <button pButton type="button" label="点击查看用户评论"  style="margin-right: .25em" (click)=look()></button>
+      <button pButton type="button" label="点击查看用户评论"  class="ui-button-secondary" (click)=around()></button>
     </p-footer>
   </p-card>
 </div>
@@ -170,27 +171,29 @@
     </p-header>
     <div>
       <div class="Spot_name">
-        <p class="right_p1">景点名称:</p>
+        <p class="right_p1">景点名称:壶口瀑布</p>
       </div>
       <div class="Sight_ticket_price">
-        <p class="right_p2">景点票价:</p>
+        <p class="right_p2">景点票价:100</p>
       </div>
       <div class="Attractions_location">
-        <p class="right_p3">景点地点:</p>
+        <p class="right_p3">景点地点:位于山西省吉
+          县城西南25公里的黄河壶口处。</p>
       </div>
       <div class="Attractions">
-        <p class="right_p4">景点介绍:</p>
+        <p class="right_p4">景点介绍:壮丽的瀑布，优美的风景。</p>
       </div>
 
     </div>
     <p-footer>
-      <button pButton type="button" label="save" icon="pi pi-check" style="margin-right: .25em"></button>
-      <button pButton type="button" label="点击查看评论" icon="pi pi-times" class="ui-button-secondary"></button>
+      <button pButton type="button" label="点击查看用户评论"  style="margin-right: .25em" (click)=look()></button>
+      <button pButton type="button" label="点击查看用户评论"  class="ui-button-secondary" (click)=around()></button>
     </p-footer>
   </p-card>
 </div>
 
-
+<!-- 分页 -->
+<!-- <p-paginator [rows]="page.pageSize" [totalRecords]="page.totalNum" (onPageChange)="paginate($event)"></p-paginator> -->
 
 <!-- 编辑弹窗 -->
 <div>
@@ -200,10 +203,10 @@
     </p-header>
     <div class="fl_contentM">
       <div class="fl_low">
-        <span>酒店信息：雨烟酒店 ，距离景点东南150米远</span>
+        <span>酒店信息：雨烟酒店 ，距离景点东南150米远.</span>
       </div>
       <div class="fl_low">
-        <span>当地特产：大红袍 ， 大闸蟹</span>
+        <span>当地特产：大红袍 ， 大闸蟹.</span>
       </div>
     </div>
     <p-footer>

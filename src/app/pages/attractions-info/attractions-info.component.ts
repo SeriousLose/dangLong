@@ -11,7 +11,9 @@ export class AttractionsInfoComponent implements OnInit {
   
   // public edit:any=''
   // public list=[];
+  datalist : any [
 
+  ];
   constructor(
     private totalSer:TotalServiceService,
     private router: Router
@@ -22,6 +24,7 @@ export class AttractionsInfoComponent implements OnInit {
   ngOnInit() { 
 
   }
+
   look(){
     this.router.navigate(['/public/attrEvalu']);
   }
@@ -29,8 +32,8 @@ export class AttractionsInfoComponent implements OnInit {
     this.display = true
   }
 
-  // addedit(){
-  //   // alert(this.edit);   //双向数据绑定
-  //   this.list.push(this.edit)
-  // }
+  
+
+
+  
 }
