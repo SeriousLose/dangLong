@@ -59,3 +59,34 @@
 //     button:active {
 //         box-shadow: inset 1px 1px 1px #DFDFDF;   
 //     }
+.fl_contentM {
+    padding: 20px 10px;
+
+    .fl_low {
+        padding-bottom: 10px;
+        label {
+            width: 70px;
+            padding-right: 15px;
+            display: inline-block;
+            text-align: right;
+        }
+    }
+}
+
+// 取消按钮
+:host /deep/ .fl_cancel {
+    .ui-widget {
+        color: #333333;
+        background-color: #f4f4f4;
+        border: 1px solid #f4f4f4;
+    }
+
+    .ui-button:enabled:hover,
+    .ui-button:enabled:focus {
+        color: #333333;
+        background-color: #f4f4f4;
+        border: 1px solid #f4f4f4;
+    }
+
+
+}

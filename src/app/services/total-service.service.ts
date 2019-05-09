@@ -61,6 +61,10 @@ export class TotalServiceService {
   getChangeviewsdata(params) {
     return this.http.get(`/api/changeviewdata?${params}`);
   }
+  // 新增景点信息
+  getAddnew(params) {
+    return this.http.get(`/api/addnews?${params}`);
+  }
 
   //获取景点评价数量
   getViewevalnumber() {
@@ -110,8 +114,8 @@ export class TotalServiceService {
     return this.http.get(`/api/amend?${params}`);
   }
   // 新增周边信息
-  getAddtoutedata(params) {
-    return this.http.get(`/api/addroute?${params}`);
+  getAddroutedata(params) {
+    return this.http.get(`/api/addroutes?${params}`);
   }
 
   // 修改个人信息

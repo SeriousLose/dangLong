@@ -52,7 +52,15 @@ export class AttractionsManageComponent implements OnInit {
       introduce: "好"
     }
   ];
+  addnew1: any={
+    id:``,
+    viewname:``,
+    price:``,
+    place:``,
+    introduce:``
+  };
   display: boolean = false; // 修改弹窗显、隐
+  display1:boolean = false; // 修改用户信息 弹窗
   page: page = new page(); // 分页
   constructor(
     private totalSer: TotalServiceService,
@@ -68,17 +76,28 @@ export class AttractionsManageComponent implements OnInit {
 
   change(data) {
     this.change1 = data;
-    this.display = true;
+    this.display1  = true;
   }
 
 
   sure() {
     console.log(this.change1);
-    this.display = false;
-    this.getChangeviewdata(this.change1.viewname,this.change1.price,this.change1.place,this.change1.introduce)
+    this.display1 = false;
+    this.getChangeviewdata(this.change1.viewname ,this.change1.price,this.change1.place,this.change1.introduce)
   }
   htt(){
     this.display = false;
+  }
+
+  addnew(data) {
+    // this.addData1 = data;
+    this.addnew1 = new newData();
+    this.display = true;
+  }
+
+  yes(){
+    console.log(this.addnew1);
+    this.getAddnews(this.addnew1.viewname,this.addnew1.price,this.addnew1.place,this.addnew1.introduce)
   }
   // 获取景点数据;
   getViewlist(curPage) {
@@ -143,7 +162,7 @@ export class AttractionsManageComponent implements OnInit {
     );
   }
 
-  // 修改用户数据
+  // 修改景点数据
   getChangeviewdata(viewname, price, place, introduce) {
     let params;
     params = `viewname=${viewname}&price=${price}&place=${place}&introduce=${introduce}`;
@@ -152,6 +171,29 @@ export class AttractionsManageComponent implements OnInit {
         // this.dataList = res;
         this.getViewlist(1);
         console.log(res, 1111111111111111);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  // 添加景点数据
+  getAddnews(viewname, price, place,introduce) {
+    let params;
+    params = `viewname=${viewname}&price=${price}&place=${place}&introduce=${introduce}`;
+    this.totalSer.getAddnew(params).subscribe(
+      res => {
+        // this.dataList = res;
+        this.getViewlist(1);
+        console.log(res, 1111111111111111);
+        this.display = false;
+        if(res['msg']){
+          alert("添加景点成功");
+        }else{
+          alert("添加失败")
+        }
+
       },
       err => {
         console.log(err);
@@ -176,4 +218,12 @@ export class page {
   totalNum: number = 1; // 总条数
   curPage: number = 1; // 当前页
   totalPage: number = 1; // 最大页数
+}
+class newData{
+
+  id:any =``;
+  viewname:any = ``;
+  price:any = ``;
+  place:any = ``;
+  introduction:any = ``;
 }
