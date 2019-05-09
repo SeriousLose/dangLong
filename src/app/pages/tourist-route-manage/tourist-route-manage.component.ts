@@ -7,39 +7,50 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./tourist-route-manage.component.less"]
 })
 export class TouristRouteManageComponent implements OnInit {
+  Keyword: any = ``; // 关键字
   dataList: any = [
     {
       id: "1",
       viewname: "张家界",
-      price: "123",
-      intro: "好"
+      Hotel: "123",
+      specialty: "好"
     },
     {
       id: "1",
       viewname: "云台山",
-      price: "123",
-      intro: "好"
+      Hotel: "123",
+      specialty: "好"
     },
     {
       id: "1",
       viewname: "连云港",
-      price: "123",
-      intro: "好"
+      Hotel: "123",
+      specialty: "好"
     },
     {
       id: "1",
       viewname: "厦门",
-      price: "123",
-      intro: "好"
+      Hotel: "123",
+      specialty: "好"
     },
     {
       id: "1",
       viewname: "雪山",
       price: "123",
-      intro: "好"
+      specialty: "好"
     }
   ];
+
+  changeRoute1: any = {
+    id:``,
+    viewname: ``,
+    Hotel:``,
+    specialty: ``
+  };
   page: page = new page(); // 分页
+  display: boolean = false; // 修改弹窗显、隐
+
+
   constructor(
     private totalSer: TotalServiceService,
     private http: HttpClient
@@ -50,12 +61,49 @@ export class TouristRouteManageComponent implements OnInit {
     this.getRoutelist(1);
   }
 
+  routeData(data) {
+    this.changeRoute1 = data;
+    this.display = true;
+  }
+
+  sure() {
+    console.log(this.changeRoute1);
+    this.display = false;
+    this.getChangeroutedata(this.changeRoute1.Hotel,this.changeRoute1.specialty,this.changeRoute1.viewname)
+  }
+  htt(){
+    this.display = false;
+  }
+
+  // 关键字查询
+  getInquire() {
+    if (!this.Keyword) {
+      alert("请输入查询关键字");
+    }
+    this.getQueryviewname(this.Keyword);
+  }
+// 根据景点名称查询
+  getQueryviewname(viewname) {
+    let params;
+    params = `viewname=${viewname}`;
+    this.totalSer.getQueryviewname(params).subscribe(
+      res => {
+        this.dataList = res;
+        this.page.totalNum =res["length"]
+        console.log(res, 1111111111111111);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
   //获取总条数
   getRouteNums() {
     this.totalSer.getRouteNum().subscribe(
       res => {
         this.page.totalNum = res[0]["COUNT (*)"];
-        console.log(this.page);
+        console.log(this.page); 
       },
       err => {
         console.log(err);
@@ -88,6 +136,40 @@ export class TouristRouteManageComponent implements OnInit {
       }
     );
   }
+//修改周边信息
+  getChangeroutedata(Hotel, specialty, viewname) {
+    let params;
+    params = `Hotel=${Hotel}&specialty=${specialty}&viewname=${viewname}`;
+    this.totalSer.getChangeroute(params).subscribe(
+      res => {
+        // this.dataList = res;
+        this.getRoutelist(1);
+        console.log(res, 1111111111111111);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  // 添加周边信息
+  
+  getAddroutedata(Hotel, specialty,viewname) {
+    let params;
+    params = `Hotel=${Hotel}&specialty=${specialty}&viewname=${viewname}`;
+    this.totalSer.getAddtoutedata(params).subscribe(
+      res => {
+        // this.dataList = res;
+        this.getRoutelist(1);
+        console.log(res, 1111111111111111);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+
 
   // 分页
   paginate(event) {

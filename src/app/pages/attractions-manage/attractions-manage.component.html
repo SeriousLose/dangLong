@@ -32,11 +32,18 @@
         修改景点信息
       </p-header>
       <div class="fl_contentM">
+            <div class="fl_low">
+                    <label for="float-input">景点名称</label>
+                    <input id="float-input" type="text" size="30"  [(ngModel)]="change1.viewname"  disabled=true  pInputText>
+                </div>
         <div class="fl_low">
             <label for="float-input">票价</label>
             <input id="float-input" type="text" size="30"  [(ngModel)]="change1.price"   pInputText>
         </div>
-        
+        <div class="fl_low">
+                <label for="float-input">地点</label>
+                <input id="float-input" type="text" size="30"  [(ngModel)]="change1.place"  disabled=true  pInputText>
+            </div>
         <div class="fl_low">
             <label for="float-input">景点介绍</label>
             <input id="float-input" type="text" size="30" [(ngModel)]="change1.introduce" pInputText>

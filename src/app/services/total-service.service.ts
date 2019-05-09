@@ -88,4 +88,34 @@ export class TotalServiceService {
   getDelroute(params) {
     return this.http.get(`/api/deleteroute?${params}`);
   }
+
+  // 修改周边景点数据
+  getChangeroute(params) {
+    return this.http.get(`/api/changeroutedata?${params}`);
+  }
+
+  //根据景点名称查询周边消息
+  getQueryroutename(params) {
+    return this.http.get(`/api/queryrouteviewname?${params}`);
+  }
+
+
+  // 登录验证
+  getlogining(params) {
+    return this.http.get(`/api/login?${params}`);
+  }
+
+  // 修改密码
+  getamendpsw(params) {
+    return this.http.get(`/api/amend?${params}`);
+  }
+  // 新增周边信息
+  getAddtoutedata(params) {
+    return this.http.get(`/api/addroute?${params}`);
+  }
+
+  // 修改个人信息
+  getChangeuserinf(params) {
+    return this.http.get(`/api/changeinfor?${params}`);
+  }
 }

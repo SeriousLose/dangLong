@@ -3,12 +3,10 @@
         <h1>个人信息</h1>
         <span class="text1">请在文本框中完善和修改您的个人信息：</span>
         <p>
-        <div class="fileInputContainer">
-            <input class="fileInput" id="" type="file" name="">
-        </div>
+        
         <label>
-            <span>你的 姓名:</span>
-            <input type="text"  name="name" placeholder="Your Full Name">
+            <span>你的 真实姓名:</span>
+            <input type="text"  name="name" placeholder="你的名字" [(ngModel)]="changeinf1.name" >
         </label>
         <label class="Main-sex">
             <span>你的 性别:</span>
@@ -17,18 +15,18 @@
         </label>
         <label>
             <span>你的 邮箱 :</span>
-            <input type="email" name="email" placeholder="@.com">
+            <input type="email" name="email" placeholder="@.com"  [(ngModel)]="changeinf1.email">
         </label>
         <label>
             <span>你的 电话:</span>
-            <input type="text" name="phone" placeholder="Please input 11 number">
+            <input type="text" name="phone" placeholder="请输入你的电话"  [(ngModel)]="changeinf1.tel">
         </label>
         <label>
             <span>Message:</span>
-            <textarea id="message" name="message" placeholder="Your message to us"></textarea>
+            <textarea id="message" name="message" placeholder="个人介绍"  [(ngModel)]="changeinf1.Introduction"></textarea>
         </label>
         <label>
-            <input type="button" class="button" value="提交">
+            <input type="button" class="button" value="提交"  (click)="sure()">
         </label>
     </form>
 </div>

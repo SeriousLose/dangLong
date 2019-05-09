@@ -13,37 +13,44 @@ export class UserManageComponent implements OnInit {
   editData1: any = {
     id:``,
     tel: ``,
+    nickname:``,
     password: ``
   };
   addData1: any={
     id:``,
     tel:``,
+    nickname:``,
     password:``
   };
   dataList: any = [
     {
       id: "1",
       tel: "zhangsan",
+      nickname: "gah",
       password: "123456"
     },
     {
       id: "2",
       tel: "zhangsan1",
+      nickname: "vahq",
       password: "1234567"
     },
     {
       id: "3",
       tel: "zhangsan2",
+      nickname: "dan2",
       password: "1234561"
     },
     {
       id: "4",
       tel: "zhangsan3",
+      nickname: "gism",
       password: "1234562"
     },
     {
       id: "5",
       tel: "zhangsan4",
+      nickname: "gbnwasq",
       password: "1234563"
     }
   ];
@@ -69,22 +76,22 @@ export class UserManageComponent implements OnInit {
   sure() {
     console.log(this.editData1);
     this.display = false;
-    this.getChangeuserdata(this.editData1.tel,this.editData1.password)
+    this.getChangeuserdatas(this.editData1.tel,this.editData1.nickname,this.editData1.password)
   }
   htt(){
     this.display = false;
   }
 
-  addData(data) {
-    this.addData1 = data;
-    this.display = true;
-  }
+  // addData(data) {
+  //   this.addData1 = data;
+  //   this.display = true;
+  // }
 
-  yes(data){
-    console.log(this.addData1);
-    this.display = false;
-    this.getAddduserdata(this.addData1.tel,this.addData1.password)
-  }
+  // yes(){
+  //   console.log(this.addData1);
+  //   this.display = false;
+  //   this.getAddduserdata(this.addData1.tel,this.addData1.password)
+  // }
 
   // 关键字查询
   getInquire() {
@@ -110,9 +117,9 @@ export class UserManageComponent implements OnInit {
   }
 
   // 修改用户数据
-  getChangeuserdata(id, password) {
+  getChangeuserdatas(tel, nickname, password) {
     let params;
-    params = `id=${id}&password=${password}`;
+    params = `tel=${tel}&nickname=${nickname}&password=${password}`;
     this.totalSer.getChangeuserdata(params).subscribe(
       res => {
         // this.dataList = res;
@@ -126,20 +133,20 @@ export class UserManageComponent implements OnInit {
   }
 
   // 添加用户数据
-  getAddduserdata(tel, password) {
-    let params;
-    params = `tel=${tel}&password=${password}`;
-    this.totalSer.getChangeuserdata(params).subscribe(
-      res => {
-        // this.dataList = res;
-        this.getUserlist(1);
-        console.log(res, 1111111111111111);
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
+  // getAddduserdata(tel, password) {
+  //   let params;
+  //   params = `tel=${tel}&password=${password}`;
+  //   this.totalSer.getAdduserdata(params).subscribe(
+  //     res => {
+  //       // this.dataList = res;
+  //       this.getUserlist(1);
+  //       console.log(res, 1111111111111111);
+  //     },
+  //     err => {
+  //       console.log(err);
+  //     }
+  //   );
+  // }
 
   // 获取数据
   getUserlist(curPage) {

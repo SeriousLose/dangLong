@@ -75,7 +75,7 @@ export class AttractionsManageComponent implements OnInit {
   sure() {
     console.log(this.change1);
     this.display = false;
-    this.getChangeviewdata(this.change1.price,this.change1.introduce)
+    this.getChangeviewdata(this.change1.viewname,this.change1.price,this.change1.place,this.change1.introduce)
   }
   htt(){
     this.display = false;
@@ -144,9 +144,9 @@ export class AttractionsManageComponent implements OnInit {
   }
 
   // 修改用户数据
-  getChangeviewdata(id, password) {
+  getChangeviewdata(viewname, price, place, introduce) {
     let params;
-    params = `id=${id}&password=${password}`;
+    params = `viewname=${viewname}&price=${price}&place=${place}&introduce=${introduce}`;
     this.totalSer.getChangeviewsdata(params).subscribe(
       res => {
         // this.dataList = res;
