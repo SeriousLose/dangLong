@@ -16,8 +16,7 @@
   <p-column field="evaluate" header="景点评价"></p-column>
   <p-column header="操作">
     <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
-      
-      <button pButton type="button" label="删除"  style="margin-right: .25em" (click)="delViewevals(data.id)" ></button>
+      <span (click)="delViewevals(data.id)">删除</span>
       <!-- <span (click)="aa()">修改</span> -->
     </ng-template>
   </p-column>

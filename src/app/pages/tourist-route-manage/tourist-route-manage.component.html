@@ -69,10 +69,8 @@
   
   <p-column header="操作">
     <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
-      
-      <button pButton type="button" label="删除"  style="margin-right: .25em" (click)="delRoute(data.id)" ></button>
+      <span (click)="delRoute(data.id)">删除</span>
       <button pButton type="button" label="修改"  class="ui-button-secondary" (click)="routeData(data)" ></button>
-      <button pButton type="button" label="添加"  style="margin-right: .25em" (click)="addRoute(data)"></button>
       <!-- <button pButton type="button" label="删除"  style="margin-right: .25em" (click)="delUser(data.id)" ></button>
       <button pButton type="button" label="修改"  class="ui-button-secondary" (click)="editData(data)" ></button>
       <button pButton type="button" label="添加"  style="margin-right: .25em" ></button> -->
@@ -83,39 +81,10 @@
 
 <!-- 分页 -->
 <p-paginator [rows]="page.pageSize" [totalRecords]="page.totalNum" (onPageChange)="paginate($event)"></p-paginator>
+
 <!-- 编辑弹窗 -->
 <div>
   <p-dialog [(visible)]="display" width="400">
-    <p-header>
-      增加周边信息
-    </p-header>
-    <div class="fl_contentM">
-        <div class="fl_low">
-            <label for="float-input">景点名称</label>
-            <input id="float-input" type="text" size="30"  [(ngModel)]="addRoute1.viewname"  pInputText>
-        </div>
-        
-      <div class="fl_low">
-          <label for="float-input">酒店信息</label>
-          <input id="float-input" type="text" size="30"  [(ngModel)]="addRoute1.Hotel"   pInputText>
-      </div>
-      
-      <div class="fl_low">
-          <label for="float-input">当地特产</label>
-          <input id="float-input" type="text" size="30" [(ngModel)]="addRoute1.specialty" pInputText>
-      </div>
-    </div>
-    <p-footer>
-      <p-button class="fl_cancel" (click)="htt()" label="取消"></p-button>
-      <p-button (click)="yes()" label="确认"></p-button>
-
-    </p-footer>
-  </p-dialog>
-</div>
-
-<!-- 编辑弹窗 -->
-<div>
-  <p-dialog [(visible)]="display1" width="400">
     <p-header>
       修改周边信息
     </p-header>
@@ -142,4 +111,3 @@
     </p-footer>
   </p-dialog>
 </div>
-

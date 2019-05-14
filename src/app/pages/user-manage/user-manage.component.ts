@@ -55,8 +55,7 @@ export class UserManageComponent implements OnInit {
     }
   ];
   page: page = new page(); // 分页
-  display: boolean = false; // 新增弹窗显、隐
-  display1:boolean = false; // 修改用户信息 弹窗 
+  display: boolean = false; // 修改弹窗显、隐
 
   constructor(
     private totalSer: TotalServiceService,
@@ -71,29 +70,28 @@ export class UserManageComponent implements OnInit {
   }
   editData(data) {
     this.editData1 = data;
-    this.display1 = true;
+    this.display = true;
   }
 
   sure() {
     console.log(this.editData1);
-    this.display1 = false;
+    this.display = false;
     this.getChangeuserdatas(this.editData1.tel,this.editData1.nickname,this.editData1.password)
   }
   htt(){
     this.display = false;
   }
 
-  addData(data) {
-    // this.addData1 = data;
-    this.addData1 = new UserData();
-    this.display = true;
-  }
+  // addData(data) {
+  //   this.addData1 = data;
+  //   this.display = true;
+  // }
 
-  yes(){
-    console.log(this.addData1);
-
-    this.getAddduserdata(this.addData1.tel,this.addData1.nickname,this.addData1.password)
-  }
+  // yes(){
+  //   console.log(this.addData1);
+  //   this.display = false;
+  //   this.getAddduserdata(this.addData1.tel,this.addData1.password)
+  // }
 
   // 关键字查询
   getInquire() {
@@ -135,27 +133,20 @@ export class UserManageComponent implements OnInit {
   }
 
   // 添加用户数据
-  getAddduserdata(tel, nickname, password,) {
-    let params;
-    params = `tel=${tel}&nickname=${nickname}&password=${password}`;
-    this.totalSer.getAdduserdata(params).subscribe(
-      res => {
-        // this.dataList = res;
-        this.getUserlist(1);
-        console.log(res, 1111111111111111);
-        this.display = false;
-        if(res['msg']){
-          alert("添加用户成功");
-        }else{
-          alert("添加失败")
-        }
-
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
+  // getAddduserdata(tel, password) {
+  //   let params;
+  //   params = `tel=${tel}&password=${password}`;
+  //   this.totalSer.getAdduserdata(params).subscribe(
+  //     res => {
+  //       // this.dataList = res;
+  //       this.getUserlist(1);
+  //       console.log(res, 1111111111111111);
+  //     },
+  //     err => {
+  //       console.log(err);
+  //     }
+  //   );
+  // }
 
   // 获取数据
   getUserlist(curPage) {
@@ -214,13 +205,4 @@ export class page {
   totalNum: number = 1; // 总条数
   curPage: number = 1; // 当前页
   totalPage: number = 1; // 最大页数
-}
-
-class UserData{
-
-    id:any =``;
-    tel:any = ``;
-    nickname:any = ``;
-    password:any = ``;
-
 }
