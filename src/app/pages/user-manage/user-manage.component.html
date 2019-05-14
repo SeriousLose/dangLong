@@ -21,7 +21,7 @@
       <span >添加</span> -->
       <button pButton type="button" label="删除"  style="margin-right: .25em" (click)="delUser(data.id)" ></button>
       <button pButton type="button" label="修改"  class="ui-button-secondary" (click)="editData(data)" ></button>
-      <button pButton type="button" label="添加"  style="margin-right: .25em" (click)="addData(data)"></button>
+      <!-- <button pButton type="button" label="添加"  style="margin-right: .25em" (click)="addData(data)"></button> -->
     </ng-template>
   </p-column>
 </p-dataTable>
@@ -29,7 +29,7 @@
 <!-- 分页 -->
 <p-paginator [rows]="page.pageSize" [totalRecords]="page.totalNum" (onPageChange)="paginate($event)"></p-paginator>
 <!-- 编辑弹窗 -->
-<div>
+<!-- <div>
   <p-dialog [(visible)]="display" width="400">
     <p-header>
       添加用户信息
@@ -37,7 +37,7 @@
     <div class="fl_contentM">
       <div class="fl_low">
           <label for="float-input">手机号</label>
-          <input id="float-input" type="text" size="30"  [(ngModel)]="addData1.tel"   pInputText>
+          <input id="float-input" type="text" size="30"  [(ngModel)]="addData1.tel"  disabled=true pInputText>
       </div>
 
       <div class="fl_low">
@@ -52,15 +52,15 @@
     </div>
     <p-footer>
       <p-button class="fl_cancel" (click)="htt()" label="取消"></p-button>
-      <p-button (click)="yes()" label="确认"></p-button>
+      <p-button (click)="sure()" label="确认"></p-button>
 
     </p-footer>
   </p-dialog>
-</div>
+</div> -->
 
 <!-- 编辑弹窗 -->
 <div>
-  <p-dialog [(visible)]="display1" width="400">
+  <p-dialog [(visible)]="display" width="400">
     <p-header>
       修改用户信息
     </p-header>

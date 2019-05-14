@@ -15,81 +15,47 @@
     <p-column field="introduce" header="景点介绍"></p-column>
     <p-column header="操作">
         <ng-template let-col let-data="rowData" let-ri="rowIndex" pTemplate="body">
-            
-            <button pButton type="button" label="删除"  style="margin-right: .25em" (click)="delView(data.id)" ></button>
-            <button pButton type="button" label="修改"  class="ui-button-secondary" (click)="change(data)" ></button>
-            <button pButton type="button" label="添加"  style="margin-right: .25em" (click)="addnew(data)"></button>
+            <span (click)="delView(data.id)">删除</span>
+            <span (click)="change(data)">修改</span>
             <!-- <button pButton type="button" label="删除"  style="margin-right: .25em" (click)="delUser(data.id)" ></button>
             <button pButton type="button" label="修改"  class="ui-button-secondary" (click)="editData(data)" ></button>
             <button pButton type="button" label="添加"  style="margin-right: .25em" ></button> -->
         </ng-template>
     </p-column>
-</p-dataTable>
+</p-dataTable> 
 <p-paginator [rows]="page.pageSize" [totalRecords]="page.totalNum" (onPageChange)="paginate($event)"></p-paginator>
+
 <!-- 编辑弹窗 -->
 <div>
     <p-dialog [(visible)]="display" width="400">
-        <p-header>
-            添加景点信息
-        </p-header>
-        <div class="fl_contentM">
+      <p-header>
+        修改景点信息
+      </p-header>
+      <div class="fl_contentM">
             <div class="fl_low">
-                <label for="float-input">景点名称</label>
-                <input id="float-input" type="text" size="30" [(ngModel)]="addnew1.viewname" pInputText>
-            </div>
-
-            <div class="fl_low">
-                <label for="float-input">票价</label>
-                <input id="float-input" type="text" size="30" [(ngModel)]="addnew1.price" pInputText>
-            </div>
-
-            <div class="fl_low">
-                <label for="float-input">地点</label>
-                <input id="float-input" type="text" size="30" [(ngModel)]="addnew1.place" pInputText>
-            </div>
-            <div class="fl_low">
-                <label for="float-input">介绍</label>
-                <input id="float-input" type="text" size="30" [(ngModel)]="addnew1.introduce" pInputText>
-            </div>
+                    <label for="float-input">景点名称</label>
+                    <input id="float-input" type="text" size="30"  [(ngModel)]="change1.viewname"  disabled=true  pInputText>
+                </div>
+        <div class="fl_low">
+            <label for="float-input">票价</label>
+            <input id="float-input" type="text" size="30"  [(ngModel)]="change1.price"   pInputText>
         </div>
-        <p-footer>
-            <p-button class="fl_cancel" (click)="htt()" label="取消"></p-button>
-            <p-button (click)="yes()" label="确认"></p-button>
-
-        </p-footer>
-    </p-dialog>
-</div>
-<!-- 编辑弹窗 -->
-<div>
-    <p-dialog [(visible)]="display1" width="400">
-        <p-header>
-            修改景点信息
-        </p-header>
-        <div class="fl_contentM">
-            <div class="fl_low">
-                <label for="float-input">景点名称</label>
-                <input id="float-input" type="text" size="30" [(ngModel)]="change1.viewname" disabled=true pInputText>
-            </div>
-            <div class="fl_low">
-                <label for="float-input">票价</label>
-                <input id="float-input" type="text" size="30" [(ngModel)]="change1.price" pInputText>
-            </div>
-            <div class="fl_low">
+        <div class="fl_low">
                 <label for="float-input">地点</label>
-                <input id="float-input" type="text" size="30" [(ngModel)]="change1.place" disabled=true pInputText>
+                <input id="float-input" type="text" size="30"  [(ngModel)]="change1.place"  disabled=true  pInputText>
             </div>
-            <div class="fl_low">
-                <label for="float-input">景点介绍</label>
-                <input id="float-input" type="text" size="30" [(ngModel)]="change1.introduce" pInputText>
-            </div>
+        <div class="fl_low">
+            <label for="float-input">景点介绍</label>
+            <input id="float-input" type="text" size="30" [(ngModel)]="change1.introduce" pInputText>
         </div>
-        <p-footer>
-            <p-button class="fl_cancel" (click)="htt()" label="取消"></p-button>
-            <p-button (click)="sure()" label="确认"></p-button>
-
-        </p-footer>
+      </div>
+      <p-footer>
+        <p-button class="fl_cancel" (click)="htt()" label="取消"></p-button>
+        <p-button (click)="sure()" label="确认"></p-button>
+  
+      </p-footer>
     </p-dialog>
-</div>
+  </div>
 <!-- <table width="90%" class="table">
   <tr>
     <th>景点名称</th>
