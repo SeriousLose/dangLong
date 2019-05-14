@@ -8,6 +8,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class TouristRouteManageComponent implements OnInit {
   Keyword: any = ``; // 关键字
+  
   dataList: any = [
     {
       id: "1",
@@ -47,9 +48,15 @@ export class TouristRouteManageComponent implements OnInit {
     Hotel:``,
     specialty: ``
   };
+  addRoute1: any={
+    id:``,
+    viewname:``,
+    Hotel:``,
+    specialty:``
+  };
   page: page = new page(); // 分页
   display: boolean = false; // 修改弹窗显、隐
-
+  display1:boolean = false; // 修改用户信息 弹窗
 
   constructor(
     private totalSer: TotalServiceService,
@@ -63,16 +70,29 @@ export class TouristRouteManageComponent implements OnInit {
 
   routeData(data) {
     this.changeRoute1 = data;
-    this.display = true;
+    this.display1 = true;
   }
 
   sure() {
     console.log(this.changeRoute1);
-    this.display = false;
-    this.getChangeroutedata(this.changeRoute1.Hotel,this.changeRoute1.specialty,this.changeRoute1.viewname)
+    this.display1 = false;
+    this.getChangeroutedata(this.changeRoute1.viewname,this.changeRoute1.Hotel,this.changeRoute1.specialty)
   }
   htt(){
     this.display = false;
+  }
+
+  
+  addRoute(data) {
+    // this.addData1 = data;
+    this.addRoute1 = new RouteData();
+    this.display = true;
+  }
+
+  yes(){
+    console.log(this.addRoute1);
+    
+    this.getAddroutedata(this.addRoute1.viewname,this.addRoute1.Hotel,this.addRoute1.specialty)
   }
 
   // 关键字查询
@@ -80,10 +100,10 @@ export class TouristRouteManageComponent implements OnInit {
     if (!this.Keyword) {
       alert("请输入查询关键字");
     }
-    this.getQueryviewname(this.Keyword);
+    this.getQueryviewnames(this.Keyword);
   }
 // 根据景点名称查询
-  getQueryviewname(viewname) {
+  getQueryviewnames(viewname) {
     let params;
     params = `viewname=${viewname}`;
     this.totalSer.getQueryviewname(params).subscribe(
@@ -154,14 +174,21 @@ export class TouristRouteManageComponent implements OnInit {
 
   // 添加周边信息
   
-  getAddroutedata(Hotel, specialty,viewname) {
+  getAddroutedata(viewname, Hotel,specialty) {
     let params;
-    params = `Hotel=${Hotel}&specialty=${specialty}&viewname=${viewname}`;
-    this.totalSer.getAddtoutedata(params).subscribe(
+    params = `viewname=${viewname}&Hotel=${Hotel}&specialty=${specialty}`;
+    this.totalSer.getAddroutedata(params).subscribe(
       res => {
         // this.dataList = res;
         this.getRoutelist(1);
         console.log(res, 1111111111111111);
+        this.display = false;
+        if(res['msg']){
+          alert("添加周边信息成功");
+        }else{
+          alert("添加失败")
+        }
+
       },
       err => {
         console.log(err);
@@ -187,5 +214,13 @@ export class page {
   totalNum: number = 1; // 总条数
   curPage: number = 1; // 当前页
   totalPage: number = 1; // 最大页数
+}
+class RouteData{
+  id:any =``;
+  nameview:any =``;
+  Hotel:any = ``;
+  specialty:any = ``;
+  
+
 }
 
