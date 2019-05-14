@@ -26,18 +26,4 @@ ng g component components/组件名称
 ng serve   链接是 http://localhost:4200/
 ng serve -port 8080  指定端口号 8080 链接是 http://localhost:8080/
 
-##
-学习git 回滚
-
-
-## 测试1
-
-## 测试2
-
-## 测试3
-
-
-# aaaaaa
-
-
 
